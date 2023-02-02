@@ -1,6 +1,6 @@
 let weather = {
   paris: {
-    temp: 19.7,
+    temp: 19,
     humidity: 80,
   },
   tokyo: {
@@ -21,19 +21,19 @@ let weather = {
   },
 };
 
-let city = prompt("Enter a city");
-city = city.toLowerCase();
-if (weather[city] !== undefined) {
-  let temperature = weather[city].temp;
-  let humidity = weather[city].humidity;
-  let celsiusTemperature = Math.round(weather.paris.temp);
-  let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
 
-  alert(
-    `It is currently ${weather.paris.temp}°C (${fahrenheitTemperature}F) in ${city} with a ${humidity}`
-  );
-} else {
-  alert(
-    `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-}
+let now = new Date();
+
+
+
+let li = document.querySelector("li");
+
+let date = now.getDate();
+let hour = now.getHours();
+let minutes = now.getMinutes();
+let year = now.getFullYear();
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = days[now.getDay()];
+
+li.innerHTML = `${day} January ${date}, ${hour}:${minutes}, ${year}`;
