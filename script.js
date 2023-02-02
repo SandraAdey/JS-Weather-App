@@ -1,39 +1,42 @@
-let weather = {
-  paris: {
-    temp: 19,
-    humidity: 80,
-  },
-  tokyo: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  lisbon: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  "san francisco": {
-    temp: 19.7,
-    humidity: 80,
-  },
-  moscow: {
-    temp: 19.7,
-    humidity: 80,
-  },
-};
+function formatDate(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Statuary",
+  ];
+  let day = days[dayIndex];
+
+  return`${days[dayIndex]} ${hours}:${minutes}`;
+}
+
+function search(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city");
+  let cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
+}
+
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+
+let searchForm = document.querySelector("#search-form");
+
+searchForm.addEventListener("submit", search);
 
 
-let now = new Date();
 
-
-
-let li = document.querySelector("li");
-
-let date = now.getDate();
-let hour = now.getHours();
-let minutes = now.getMinutes();
-let year = now.getFullYear();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-
-li.innerHTML = `${day} January ${date}, ${hour}:${minutes}, ${year}`;
+dateElement.innerHTML = formatDate(currentTime);

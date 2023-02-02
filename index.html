@@ -11,12 +11,15 @@
 <body>
     <div class="container">
         <div class="weather-app">
-            <form class="weather-search-form">
+            <form class="search-form" id="search-form">
                 <div class="row">
                     <div class="col-9">
-                <input type="search" placeholder="type a city.."
+                <input 
+                type="search" 
+                placeholder="Search for a city"
                 autofocus="on"
                 autocomplete="off"
+                id="city-input"
                 class="form-control shadow-sm border-0" 
                 />
             </div>
@@ -31,11 +34,10 @@
           London, UK
         </h1>
         <ul>
-            <li>
+            <li id="date">
                 Wednesday 22:00
             </li>
-            <ul>
-                <li id="date"></li>
+            
             <li>
                 Partly Cloudy
             </li>
