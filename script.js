@@ -30,13 +30,14 @@ function search(event) {
   cityElement.innerHTML = cityInput.value;
 }
 
+
+
+// Feature 1
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
 
+// Feature 2
 let searchForm = document.querySelector("#search-form");
 
 searchForm.addEventListener("submit", search);
-
-
-
-dateElement.innerHTML = formatDate(currentTime);
