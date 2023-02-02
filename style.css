@@ -55,3 +55,13 @@ li:first-letter {
 .search-form {
   margin-bottom: 20px;
 }
+
+.weather-temperature .active {
+    color: rbg(33, 33, 33);
+    cursor: default;
+    
+}
+
+.weather-temperature .active:hover {
+    text-decoration: none;
+}
