@@ -21,19 +21,15 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(response){
-    console.log(response.data.daily);
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  
-  let days = ["Mon","Tue","Wen","Thu", "Fri", "Sat"];
-  
-  let forecastHTML = `<div class="row">`;
-  
-  days.forEach(function (day) {
 
-  forecastHTML =
-    forecastHTML +
-    `
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
       <div class="col-2">
         <div class="weather-forecast-date">${day}</div>
         <img
@@ -48,12 +44,8 @@ function displayForecast(response){
       </div>
   `;
   });
-   forecastHTML = forecastHTML + `</div>`;         
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
-  
-          
-
 }
 
 function getForecast(coordinates) {
@@ -141,4 +133,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+search("London");
